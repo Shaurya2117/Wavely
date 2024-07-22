@@ -19,6 +19,16 @@
     
     --sticky-top-left: 5.4rem;
     --sticky-top-right:-18rem;
+   
+}
+
+body {
+    height: 100vh; /* Full viewport height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    margin-right: 10px !important;
+}
+body::-webkit-scrollbar {
+    width: 0; /* Remove the scrollbar for WebKit browsers */
 }
 
 *,
@@ -38,6 +48,7 @@ body {
     color: var(--color-dark);
     background: var(--color-light);
     overflow-x: hidden;
+   
     
 }
 
@@ -46,6 +57,11 @@ body {
     margin: 0 auto;
 }
 
+.brand{
+    display: flex;
+    align-items: center;
+  
+}
 .profile-pic{
     width: 2.7rem;
     aspect-ratio: 1/1;
@@ -54,7 +70,8 @@ body {
 }
 
 .logo{
-    margin-left: -8.2rem;
+    /* margin-left: -8.2rem; */
+    padding-left: 4px;
 }
 
 img{
@@ -102,6 +119,7 @@ nav .container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .search-bar{
@@ -146,6 +164,7 @@ main .container .left{
     position: sticky;
     top: var(--sticky-top-left);
 }
+
 
 main .container .left .profile{
     padding: var(--card-padding);
@@ -429,62 +448,67 @@ main .container .right{
     height: max-content;
     position: sticky;
     top: var(--sticky-top-right);
-    bottom: 0;
+    /* bottom: 0; */
+    top: 98px;
 }
 
-.right .massages{
+.right .messages{
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     
 }
 
-.right .massages .heading{
+.right .messages .heading{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.right .massages i{
+.right .messages i{
     font-size: 1.4rem;
 }
 
-.right .massages .search-bar{
+.right .messages .search-bar{
     display: flex;
     margin-bottom: 1rem;
 }
 
-.right .massages .category {
+.right .messages .category {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+    cursor: pointer; 
 }
 
-.right .massages .category h6{
+.right .messages .category h6{
     width: 100%;
     text-align: center;
     border-bottom: 4px solid var(--color-light);
     padding-bottom: 0.5rem; 
     font-size:0.85rem;
+
 }
 
-.right .massages .category .active{
-    border-color: var(--color-dark);    
+.right .messages .category .active{
+    border-color: var(--color-dark); 
+      
 }
 
-.right .massages .massage-requests{
+.right .messages .message-requests{
     border-color:var(--color-dark) ;
+    cursor: pointer;
 }
 
-.right .massages .massage{
+.right .messages .message{
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
     align-items: start;
 }
 
-.right .massage .profile-pic{
+.right .message .profile-pic{
     position: relative;
     overflow: visible;
 }
@@ -494,15 +518,15 @@ main .container .right{
 }
 
 
-.right .massages .massage:last-child{
+.right .messages .message:last-child{
     margin: 0;
 }
 
-.right .massages .massage p{
+.right .messages .message p{
     font-size: 0.8rem;
 }
 
-.right .massages .massage .profile-pic .active{
+.right .messages .message .profile-pic .active{
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 50%;
@@ -739,6 +763,7 @@ main .container .right{
         bottom: 0;
         right: 0;
     }
+  
 
 
 /* ******************noti-popup****************** */
@@ -765,4 +790,30 @@ main .container .right{
 .main .container .right{
     display: none;
 }
+}
+
+
+@media (max-width: 600px) {
+    .left,
+    .right {
+        display: none;
+    }
+    .middle{
+        width: 98vw !important;
+        
+    }
+    nav{
+        padding: 0.5rem;
+        opacity: 97%;
+    }
+    .container .create .cre{
+        display: none;
+    }
+    .container .brand .profile-pic{
+        display: none;
+    }
+    .container .brand .wn{
+        text-align: center;
+    }
+
 }
