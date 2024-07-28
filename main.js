@@ -1,7 +1,7 @@
 // sidebar
 const menuitems = document.querySelectorA11('.menu-item');
 
-// massages
+// messages
 const messagesnotificaton = document.querySelector
 ('#messages-notifications');
 const messages = document.querySelector('.message');
@@ -10,7 +10,7 @@ const messages = document.querySelector('.message');
 
 // remove active class from all menu items
 const changeActiveItem = () => {
-    menuItems.forEach(item => {
+    menuitems.forEach(item => {
         item.classList.remove('active');
         
     })
